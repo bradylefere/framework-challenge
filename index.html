@@ -40,6 +40,43 @@
     label { min-width: 6.5rem; }
     .btn { padding: .4rem .75rem; border-radius: 6px; border: 1px solid #bbb; background: #f0f0f0; cursor: pointer; }
   </style>
+  /* Custom styles for the business-card demo */
+
+  /* Center page content nicely (Bootstrap handles most layout) */
+  .business-card {
+    width: 90%;
+    max-width: 380px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #0b1f41, #071027);
+    color: #fff;
+    padding: 0;
+  }
+
+  /* Card body contrast */
+  .business-card .card-body {
+    padding: 1rem 1.25rem;
+  }
+
+  /* Title styling */
+  .business-card .card-title {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #fff;
+  }
+
+  /* Link color inside card */
+  .business-card a {
+    color: #ffd966;
+    text-decoration: none;
+  }
+  .business-card a:hover { text-decoration: underline; }
+
+  /* Print styles: print only the card if using print */
+  @media print {
+    body * { visibility: hidden; }
+    .business-card, .business-card * { visibility: visible; }
+    .business-card { position: absolute; left: 0; top: 0; width: 90mm; height: 50mm; box-shadow: none; }
+  }
 </head>
 <body>
   <header role="banner">
@@ -156,5 +193,59 @@
   <footer role="contentinfo">
     <p>Created as an HTML5 example including <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;p&gt;</code>, lists, <code>&lt;cite&gt;</code>, <code>&lt;form&gt;</code> & <code>&lt;input&gt;</code>, <code>&lt;table&gt;</code>, and <code>&lt;section&gt;</code>.</p>
   </footer>
+
+  <!-- Markdown section for README info -->
+  <section aria-labelledby="markdown-info">
+    <h2 id="markdown-info">README.md - Project Setup and Deployment</h2>
+    <p>
+      # Hans Zimmer — Business Card (HTML5 demo)
+    </p>
+    <p>
+      A simple HTML5 demo page showing a printable business-card mockup for Hans Zimmer. Built with Bootstrap (CDN) and minimal custom CSS.
+    </p>
+    <p>
+      ## How to run locally
+    </p>
+    <ol>
+      <li>From the project root:
+        <pre><code>python3 -m http.server 8000</code></pre>
+      </li>
+      <li>Open <a href="http://localhost:8000" target="_blank">http://localhost:8000</a> in your browser and view `index.html`.</li>
+    </ol>
+    <p>
+      ## Validate HTML (W3C)
+    </p>
+    <ul>
+      <li>Visit <a href="https://validator.w3.org/" target="_blank">https://validator.w3.org/</a> and either:
+        <ul>
+          <li>Use the "Validate by File Upload" and upload `index.html`, or</li>
+          <li>Use the "Validate by Direct Input" and paste the HTML, or</li>
+          <li>After pushing to GitHub and deploying, validate the public Netlify URL.</li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+      ## Deploy to Netlify (quick)
+    </p>
+    <ul>
+      <li>Option A (UI): Create a new site in Netlify, connect your GitHub repo and pick the branch `main`. There is no build command.</li>
+      <li>Option B (CLI):
+        <pre><code>npm install -g netlify-cli
+netlify deploy --dir=. --prod</code></pre>
+      </li>
+    </ul>
+    <p>
+      ## Git commands (example)
+    </p>
+    <pre><code>git init
+git add .
+git commit -m "Initial: Hans Zimmer business-card demo with Bootstrap"
+git branch -M main
+git remote add origin git@github.com:&lt;your-username&gt;/framework-challenge.git
+git push -u origin main</code></pre>
+    <p>
+      Once deployed, submit the GitHub repository URL and the public Netlify site URL to D2L.
+    </p>
+  </section>
 </body>
 </html>
