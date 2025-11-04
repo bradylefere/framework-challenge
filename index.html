@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HTML5 Index Page Example</title>
+  <style>
+    /* Minimal styling for readability */
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      line-height: 1.5;
+      margin: 2rem;
+      color: #111;
+      background: #f7f8fa;
+    }
+    header, main, footer, section {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: .5rem;
+    }
+    th, td {
+      border: 1px solid #e0e0e0;
+      padding: .5rem;
+      text-align: left;
+    }
+    caption {
+      caption-side: top;
+      font-weight: 600;
+      margin-bottom: .25rem;
+    }
+    form > * + * { margin-top: .5rem; }
+    .form-row { display:flex; gap: .5rem; align-items: center; }
+    label { min-width: 6.5rem; }
+    .btn { padding: .4rem .75rem; border-radius: 6px; border: 1px solid #bbb; background: #f0f0f0; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <!-- h1 -->
+    <h1>Welcome to the HTML5 Index Page Example</h1>
+    <p>
+      This page demonstrates common HTML5 elements: headings, paragraphs, lists,
+      a citation, a form with inputs, a table, and use of the <code>&lt;section&gt;</code> element.
+    </p>
+  </header>
+
+  <main role="main">
+    <!-- section with headings -->
+    <section aria-labelledby="headings-example">
+      <h2 id="headings-example">Headings and Paragraphs</h2>
+      <!-- h3 -->
+      <h3>About this demo</h3>
+      <p>
+        The short paragraph below contains a <cite>citation</cite> and shows normal paragraph text.
+      </p>
+      <p>
+        Example citation: <cite>Mozilla Developer Network — HTML elements reference</cite>.
+      </p>
+    </section>
+
+    <!-- section with lists -->
+    <section aria-labelledby="lists-example">
+      <h2 id="lists-example">Lists</h2>
+
+      <h3>Unordered list (bullets)</h3>
+      <ul>
+        <li>HTML5 semantic elements</li>
+        <li>Accessible forms and inputs</li>
+        <li>Tables with headers and captions</li>
+      </ul>
+
+      <h3>Ordered list (numbered)</h3>
+      <ol>
+        <li>Plan the document structure</li>
+        <li>Use semantic elements like <code>&lt;section&gt;</code> and <code>&lt;header&gt;</code></li>
+        <li>Provide labels and accessible attributes</li>
+      </ol>
+    </section>
+
+    <!-- section with a basic form -->
+    <section aria-labelledby="form-example">
+      <h2 id="form-example">Form example</h2>
+      <p>This is a simple accessible form using <code>&lt;form&gt;</code> and various <code>&lt;input&gt;</code> types.</p>
+
+      <form action="#" method="post" onsubmit="alert('Form submitted (demo)'); return false;">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required placeholder="Your name" />
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+        </div>
+
+        <div class="form-row">
+          <label for="age">Age</label>
+          <input id="age" name="age" type="number" min="0" max="120" />
+        </div>
+
+        <div class="form-row">
+          <label for="subscribe">Subscribe</label>
+          <input id="subscribe" name="subscribe" type="checkbox" />
+          <small>Sign me up for the newsletter</small>
+        </div>
+
+        <div class="form-row">
+          <button class="btn" type="submit">Submit</button>
+          <button class="btn" type="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- section with a table -->
+    <section aria-labelledby="table-example">
+      <h2 id="table-example">Table example</h2>
+      <p>Below is a simple table with a caption and header row.</p>
+
+      <table>
+        <caption>Sample product list</caption>
+        <thead>
+          <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Price</th>
+            <th scope="col">In stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Notebook</td>
+            <td>$9.99</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Pen</td>
+            <td>$1.49</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Eraser</td>
+            <td>$0.99</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>Created as an HTML5 example including <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;p&gt;</code>, lists, <code>&lt;cite&gt;</code>, <code>&lt;form&gt;</code> & <code>&lt;input&gt;</code>, <code>&lt;table&gt;</code>, and <code>&lt;section&gt;</code>.</p>
+  </footer>
+</body>
+</html>
