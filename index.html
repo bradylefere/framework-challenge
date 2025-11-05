@@ -3,249 +3,159 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>HTML5 Index Page Example</title>
-  <style>
-    /* Minimal styling for readability */
-    body {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      line-height: 1.5;
-      margin: 2rem;
-      color: #111;
-      background: #f7f8fa;
-    }
-    header, main, footer, section {
-      background: #fff;
-      border-radius: 8px;
-      padding: 1.25rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: .5rem;
-    }
-    th, td {
-      border: 1px solid #e0e0e0;
-      padding: .5rem;
-      text-align: left;
-    }
-    caption {
-      caption-side: top;
-      font-weight: 600;
-      margin-bottom: .25rem;
-    }
-    form > * + * { margin-top: .5rem; }
-    .form-row { display:flex; gap: .5rem; align-items: center; }
-    label { min-width: 6.5rem; }
-    .btn { padding: .4rem .75rem; border-radius: 6px; border: 1px solid #bbb; background: #f0f0f0; cursor: pointer; }
-  </style>
-  /* Custom styles for the business-card demo */
+  <title>Hans Zimmer — Business Card</title>
+  <meta name="description" content="Printable business-card mockup and landing page for Hans Zimmer — demo page includes headings, lists, cite, form/input, table and sections.">
 
-  /* Center page content nicely (Bootstrap handles most layout) */
-  .business-card {
-    width: 90%;
-    max-width: 380px;
-    border-radius: 12px;
-    background: linear-gradient(180deg, #0b1f41, #071027);
-    color: #fff;
-    padding: 0;
-  }
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  /* Card body contrast */
-  .business-card .card-body {
-    padding: 1rem 1.25rem;
-  }
-
-  /* Title styling */
-  .business-card .card-title {
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    color: #fff;
-  }
-
-  /* Link color inside card */
-  .business-card a {
-    color: #ffd966;
-    text-decoration: none;
-  }
-  .business-card a:hover { text-decoration: underline; }
-
-  /* Print styles: print only the card if using print */
-  @media print {
-    body * { visibility: hidden; }
-    .business-card, .business-card * { visibility: visible; }
-    .business-card { position: absolute; left: 0; top: 0; width: 90mm; height: 50mm; box-shadow: none; }
-  }
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <header role="banner">
-    <!-- h1 -->
-    <h1>Welcome to the HTML5 Index Page Example</h1>
-    <p>
-      This page demonstrates common HTML5 elements: headings, paragraphs, lists,
-      a citation, a form with inputs, a table, and use of the <code>&lt;section&gt;</code> element.
-    </p>
+<body class="bg-light text-dark">
+
+  <header class="container py-4">
+    <h1 class="display-6 text-center">Hans Zimmer — Business Card</h1>
+    <p class="text-center text-muted">A semantic HTML5 demo showing a printable business-card mockup and the required HTML elements.</p>
   </header>
 
-  <main role="main">
-    <!-- section with headings -->
-    <section aria-labelledby="headings-example">
-      <h2 id="headings-example">Headings and Paragraphs</h2>
-      <!-- h3 -->
-      <h3>About this demo</h3>
-      <p>
-        The short paragraph below contains a <cite>citation</cite> and shows normal paragraph text.
-      </p>
-      <p>
-        Example citation: <cite>Mozilla Developer Network — HTML elements reference</cite>.
-      </p>
+  <main class="container mb-5" role="main">
+    <!-- Card section -->
+    <section id="card-preview" aria-labelledby="card-heading" class="mb-4">
+      <h2 id="card-heading" class="h4">Card preview</h2>
+
+      <div class="d-flex justify-content-center mt-3">
+        <article class="business-card" role="article" aria-labelledby="person-name">
+          <header>
+            <h3 id="person-name" class="name">Hans Zimmer</h3>
+            <p class="role">Composer & Sound Designer</p>
+          </header>
+
+          <section class="contact" aria-labelledby="contact-heading">
+            <h4 id="contact-heading" class="visually-hidden">Contact</h4>
+            <dl>
+              <dt>Phone</dt>
+              <dd><a href="tel:+1234567890">+1 (234) 567-890</a></dd>
+              <dt>Email</dt>
+              <dd><a href="mailto:hans@example.com">hans@example.com</a></dd>
+              <dt>Website</dt>
+              <dd><a href="https://example.com" target="_blank" rel="noopener">example.com</a></dd>
+            </dl>
+            <p class="credits"><cite>Selected credits: The Dark Knight, Inception, Interstellar</cite></p>
+          </section>
+
+          <footer class="card-actions">
+            <button id="printBtn" class="btn btn-sm btn-outline-light">Print Card</button>
+            <button id="copyBtn" class="btn btn-sm btn-light">Copy Contact</button>
+          </footer>
+        </article>
+      </div>
     </section>
 
-    <!-- section with lists -->
-    <section aria-labelledby="lists-example">
-      <h2 id="lists-example">Lists</h2>
+    <!-- Details section: headings, lists, cite -->
+    <section id="details" aria-labelledby="details-heading" class="mb-4">
+      <h2 id="details-heading" class="h4">Details & elements</h2>
 
-      <h3>Unordered list (bullets)</h3>
+      <h3>About</h3>
+      <p>This page is a small landing for a business card design. It includes semantic elements and accessibility attributes.</p>
+
+      <h3>Services (unordered)</h3>
       <ul>
-        <li>HTML5 semantic elements</li>
-        <li>Accessible forms and inputs</li>
-        <li>Tables with headers and captions</li>
+        <li>Film scoring</li>
+        <li>Sound design</li>
+        <li>Orchestration</li>
       </ul>
 
-      <h3>Ordered list (numbered)</h3>
+      <h3>Process (ordered)</h3>
       <ol>
-        <li>Plan the document structure</li>
-        <li>Use semantic elements like <code>&lt;section&gt;</code> and <code>&lt;header&gt;</code></li>
-        <li>Provide labels and accessible attributes</li>
+        <li>Consultation</li>
+        <li>Thematic sketches</li>
+        <li>Production & delivery</li>
       </ol>
+
+      <blockquote class="blockquote">
+        <p>"Music is the language of emotions."</p>
+        <footer class="blockquote-footer">Attributed in <cite>Interview: Hans Zimmer, Film Music Journal</cite></footer>
+      </blockquote>
     </section>
 
-    <!-- section with a basic form -->
-    <section aria-labelledby="form-example">
-      <h2 id="form-example">Form example</h2>
-      <p>This is a simple accessible form using <code>&lt;form&gt;</code> and various <code>&lt;input&gt;</code> types.</p>
+    <!-- Table section -->
+    <section id="contacts" aria-labelledby="contacts-heading" class="mb-4">
+      <h2 id="contacts-heading" class="h4">Contact summary</h2>
+      <p>Quick contact table with caption and column headers.</p>
 
-      <form action="#" method="post" onsubmit="alert('Form submitted (demo)'); return false;">
-        <div class="form-row">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" required placeholder="Your name" />
-        </div>
-
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required placeholder="you@example.com" />
-        </div>
-
-        <div class="form-row">
-          <label for="age">Age</label>
-          <input id="age" name="age" type="number" min="0" max="120" />
-        </div>
-
-        <div class="form-row">
-          <label for="subscribe">Subscribe</label>
-          <input id="subscribe" name="subscribe" type="checkbox" />
-          <small>Sign me up for the newsletter</small>
-        </div>
-
-        <div class="form-row">
-          <button class="btn" type="submit">Submit</button>
-          <button class="btn" type="reset">Reset</button>
-        </div>
-      </form>
-    </section>
-
-    <!-- section with a table -->
-    <section aria-labelledby="table-example">
-      <h2 id="table-example">Table example</h2>
-      <p>Below is a simple table with a caption and header row.</p>
-
-      <table>
-        <caption>Sample product list</caption>
+      <table class="table table-sm">
+        <caption>Primary contact methods</caption>
         <thead>
           <tr>
-            <th scope="col">Product</th>
-            <th scope="col">Price</th>
-            <th scope="col">In stock</th>
+            <th scope="col">Type</th>
+            <th scope="col">Details</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Notebook</td>
-            <td>$9.99</td>
-            <td>Yes</td>
+            <td>Phone</td>
+            <td><a href="tel:+1234567890">+1 (234) 567-890</a></td>
           </tr>
           <tr>
-            <td>Pen</td>
-            <td>$1.49</td>
-            <td>Yes</td>
+            <td>Email</td>
+            <td><a href="mailto:hans@example.com">hans@example.com</a></td>
           </tr>
           <tr>
-            <td>Eraser</td>
-            <td>$0.99</td>
-            <td>No</td>
+            <td>Website</td>
+            <td><a href="https://example.com" target="_blank" rel="noopener">example.com</a></td>
           </tr>
         </tbody>
       </table>
     </section>
+
+    <!-- Inquiry form -->
+    <section id="inquiry" aria-labelledby="inquiry-heading" class="mb-4">
+      <h2 id="inquiry-heading" class="h4">Inquiry form</h2>
+      <p>Send a short inquiry. (Demo form — client-side only)</p>
+
+      <form id="inquiryForm" action="#" method="post" onsubmit="alert('Demo: inquiry submitted'); return false;">
+        <div class="mb-2">
+          <label for="fullname" class="form-label">Full name</label>
+          <input id="fullname" name="fullname" class="form-control" type="text" required placeholder="Your full name">
+        </div>
+
+        <div class="mb-2">
+          <label for="email" class="form-label">Email</label>
+          <input id="email" name="email" class="form-control" type="email" required placeholder="you@example.com">
+        </div>
+
+        <div class="mb-2">
+          <label for="message" class="form-label">Message</label>
+          <textarea id="message" name="message" class="form-control" rows="3" placeholder="Short message"></textarea>
+        </div>
+
+        <div class="mb-2 form-check">
+          <input id="consent" name="consent" class="form-check-input" type="checkbox">
+          <label for="consent" class="form-check-label">I agree to be contacted</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send inquiry</button>
+      </form>
+    </section>
   </main>
 
-  <footer role="contentinfo">
-    <p>Created as an HTML5 example including <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;p&gt;</code>, lists, <code>&lt;cite&gt;</code>, <code>&lt;form&gt;</code> & <code>&lt;input&gt;</code>, <code>&lt;table&gt;</code>, and <code>&lt;section&gt;</code>.</p>
+  <footer class="container py-3 text-center text-muted">
+    <p class="mb-0">© <span id="year"></span> Hans Zimmer — business card demo. For demo/educational use only.</p>
+    <p class="small mb-0">Validate with <a href="https://validator.w3.org/" target="_blank" rel="noopener">W3C Validator</a>.</p>
   </footer>
 
-  <!-- Markdown section for README info -->
-  <section aria-labelledby="markdown-info">
-    <h2 id="markdown-info">README.md - Project Setup and Deployment</h2>
-    <p>
-      # Hans Zimmer — Business Card (HTML5 demo)
-    </p>
-    <p>
-      A simple HTML5 demo page showing a printable business-card mockup for Hans Zimmer. Built with Bootstrap (CDN) and minimal custom CSS.
-    </p>
-    <p>
-      ## How to run locally
-    </p>
-    <ol>
-      <li>From the project root:
-        <pre><code>python3 -m http.server 8000</code></pre>
-      </li>
-      <li>Open <a href="http://localhost:8000" target="_blank">http://localhost:8000</a> in your browser and view `index.html`.</li>
-    </ol>
-    <p>
-      ## Validate HTML (W3C)
-    </p>
-    <ul>
-      <li>Visit <a href="https://validator.w3.org/" target="_blank">https://validator.w3.org/</a> and either:
-        <ul>
-          <li>Use the "Validate by File Upload" and upload `index.html`, or</li>
-          <li>Use the "Validate by Direct Input" and paste the HTML, or</li>
-          <li>After pushing to GitHub and deploying, validate the public Netlify URL.</li>
-        </ul>
-      </li>
-    </ul>
-    <p>
-      ## Deploy to Netlify (quick)
-    </p>
-    <ul>
-      <li>Option A (UI): Create a new site in Netlify, connect your GitHub repo and pick the branch `main`. There is no build command.</li>
-      <li>Option B (CLI):
-        <pre><code>npm install -g netlify-cli
-netlify deploy --dir=. --prod</code></pre>
-      </li>
-    </ul>
-    <p>
-      ## Git commands (example)
-    </p>
-    <pre><code>git init
-git add .
-git commit -m "Initial: Hans Zimmer business-card demo with Bootstrap"
-git branch -M main
-git remote add origin git@github.com:&lt;your-username&gt;/framework-challenge.git
-git push -u origin main</code></pre>
-    <p>
-      Once deployed, submit the GitHub repository URL and the public Netlify site URL to D2L.
-    </p>
-  </section>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Interaction: print and copy contact
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('printBtn').addEventListener('click', () => window.print());
+    document.getElementById('copyBtn').addEventListener('click', () => {
+      const contact = `Hans Zimmer\nPhone: +1 (234) 567-890\nEmail: hans@example.com\nWebsite: https://example.com`;
+      navigator.clipboard?.writeText(contact).then(() => alert('Contact copied to clipboard'), () => alert('Copy failed'));
+    });
+  </script>
 </body>
 </html>
