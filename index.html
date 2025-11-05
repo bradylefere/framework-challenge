@@ -3,136 +3,175 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Hans Zimmer — Business Card</title>
-  <meta name="description" content="Printable business-card mockup and landing page for Hans Zimmer — demo page includes headings, lists, cite, form/input, table and sections.">
+  <title>Hans Zimmer — Composer & Music Producer</title>
+  <meta name="description" content="Hans Zimmer — Berlin-based German film composer & music producer. Business-card demo with printable format.">
 
-  <!-- Bootstrap CSS (CDN) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Custom CSS -->
+  <!-- Framework: Bootstrap (for quick responsive utilities) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+  <!-- Custom styles -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-light text-dark">
+<body class="site-bg text-dark">
 
-  <header class="container py-4">
-    <h1 class="display-6 text-center">Hans Zimmer — Business Card</h1>
-    <p class="text-center text-muted">A semantic HTML5 demo showing a printable business-card mockup and the required HTML elements.</p>
+  <header class="site-header container py-5">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <div class="brand">
+          <!-- Monogram SVG -->
+          <svg class="monogram" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#ffd966"/>
+                <stop offset="1" stop-color="#f6b756"/>
+              </linearGradient>
+            </defs>
+            <rect width="120" height="120" rx="16" fill="#071027"/>
+            <text x="50%" y="58%" text-anchor="middle" fill="url(#g)" font-family="Playfair Display, serif" font-weight="700" font-size="56">HZ</text>
+          </svg>
+
+          <div class="brand-text">
+            <h1 class="site-title">Hans Zimmer</h1>
+            <p class="site-sub">Composer & Music Producer — Berlin, Germany</p>
+          </div>
+        </div>
+      </div>
+
+      <nav class="col-md-6 text-md-end d-none d-md-block">
+        <p class="nav-note">Cinematic · Orchestral · Electronic</p>
+      </nav>
+    </div>
   </header>
 
-  <main class="container mb-5" role="main">
-    <!-- Card section -->
-    <section id="card-preview" aria-labelledby="card-heading" class="mb-4">
-      <h2 id="card-heading" class="h4">Card preview</h2>
+  <main class="container">
+    <!-- Business card visual -->
+    <section id="card" aria-labelledby="card-heading" class="mb-5">
+      <h2 id="card-heading" class="h4 visually-hidden">Business card</h2>
 
-      <div class="d-flex justify-content-center mt-3">
-        <article class="business-card" role="article" aria-labelledby="person-name">
-          <header>
-            <h3 id="person-name" class="name">Hans Zimmer</h3>
-            <p class="role">Composer & Sound Designer</p>
-          </header>
+      <div class="d-flex justify-content-center">
+        <article class="business-card shadow-lg" role="article" aria-label="Hans Zimmer business card">
+          <div class="left">
+            <h3 id="name">Hans Zimmer</h3>
+            <h4 class="role">Composer • Music Producer</h4>
 
-          <section class="contact" aria-labelledby="contact-heading">
-            <h4 id="contact-heading" class="visually-hidden">Contact</h4>
-            <dl>
+            <p class="origin">Berlin, Germany</p>
+
+            <dl class="contact-list">
               <dt>Phone</dt>
-              <dd><a href="tel:+1234567890">+1 (234) 567-890</a></dd>
-              <dt>Email</dt>
-              <dd><a href="mailto:hans@example.com">hans@example.com</a></dd>
-              <dt>Website</dt>
-              <dd><a href="https://example.com" target="_blank" rel="noopener">example.com</a></dd>
-            </dl>
-            <p class="credits"><cite>Selected credits: The Dark Knight, Inception, Interstellar</cite></p>
-          </section>
+              <dd><a href="tel:+49-30-000-0000">+49 30 000 0000</a></dd>
 
-          <footer class="card-actions">
-            <button id="printBtn" class="btn btn-sm btn-outline-light">Print Card</button>
-            <button id="copyBtn" class="btn btn-sm btn-light">Copy Contact</button>
-          </footer>
+              <dt>Email</dt>
+              <dd><a href="mailto:hello@hanszimmer.example">hello@hanszimmer.example</a></dd>
+
+              <dt>Mgmt</dt>
+              <dd><a href="https://example.com" rel="noopener" target="_blank">Representative</a></dd>
+            </dl>
+
+            <p class="credits"><cite>Selected: The Dark Knight • Inception • Interstellar</cite></p>
+          </div>
+
+          <div class="right">
+            <div class="logo-mark" aria-hidden="true">
+              <!-- decorative waveform-like mark -->
+              <svg viewBox="0 0 200 60" preserveAspectRatio="none">
+                <path d="M0 30 C30 10, 60 50, 90 30 C120 10, 150 50, 200 30" stroke="#ffd966" stroke-width="3" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+
+            <div class="card-actions">
+              <button id="printBtn" class="btn btn-outline-light btn-sm">Print</button>
+              <button id="copyBtn" class="btn btn-light btn-sm">Copy</button>
+            </div>
+          </div>
         </article>
       </div>
     </section>
 
-    <!-- Details section: headings, lists, cite -->
-    <section id="details" aria-labelledby="details-heading" class="mb-4">
-      <h2 id="details-heading" class="h4">Details & elements</h2>
+    <!-- About and elements -->
+    <section id="about" aria-labelledby="about-heading" class="mb-4">
+      <h2 id="about-heading">About this design</h2>
 
-      <h3>About</h3>
-      <p>This page is a small landing for a business card design. It includes semantic elements and accessibility attributes.</p>
+      <h3>Concept</h3>
+      <p>This business-card evokes cinematic warmth and clarity: deep navy background, golden accents and a refined serif for the name to reflect classical roots and modern production.</p>
 
-      <h3>Services (unordered)</h3>
+      <h3>What this page demonstrates</h3>
       <ul>
-        <li>Film scoring</li>
-        <li>Sound design</li>
-        <li>Orchestration</li>
+        <li>Semantic HTML5: <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, headings</li>
+        <li>Accessible form controls and labels</li>
+        <li>Printable card layout (print CSS)</li>
       </ul>
 
       <h3>Process (ordered)</h3>
       <ol>
-        <li>Consultation</li>
-        <li>Thematic sketches</li>
-        <li>Production & delivery</li>
+        <li>Brief & research</li>
+        <li>Sketch typographic direction</li>
+        <li>Finalize visual and print specs</li>
       </ol>
 
       <blockquote class="blockquote">
-        <p>"Music is the language of emotions."</p>
-        <footer class="blockquote-footer">Attributed in <cite>Interview: Hans Zimmer, Film Music Journal</cite></footer>
+        <p class="mb-0">"Music must breathe to tell the story."<br/></p>
+        <footer class="blockquote-footer">Studio notes — <cite>Hans Zimmer</cite></footer>
       </blockquote>
     </section>
 
-    <!-- Table section -->
-    <section id="contacts" aria-labelledby="contacts-heading" class="mb-4">
-      <h2 id="contacts-heading" class="h4">Contact summary</h2>
-      <p>Quick contact table with caption and column headers.</p>
+    <!-- Contact Table -->
+    <section id="contact-table" aria-labelledby="contact-table-heading" class="mb-4">
+      <h2 id="contact-table-heading">Contact Summary</h2>
+      <p>Quick details in a compact table.</p>
 
-      <table class="table table-sm">
-        <caption>Primary contact methods</caption>
+      <table class="table table-borderless small">
+        <caption>Business contact summary</caption>
         <thead>
           <tr>
             <th scope="col">Type</th>
-            <th scope="col">Details</th>
+            <th scope="col">Info</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Phone</td>
-            <td><a href="tel:+1234567890">+1 (234) 567-890</a></td>
+            <td>Location</td>
+            <td>Berlin, Germany</td>
           </tr>
           <tr>
-            <td>Email</td>
-            <td><a href="mailto:hans@example.com">hans@example.com</a></td>
+            <td>Primary</td>
+            <td><a href="mailto:hello@hanszimmer.example">hello@hanszimmer.example</a></td>
           </tr>
           <tr>
-            <td>Website</td>
-            <td><a href="https://example.com" target="_blank" rel="noopener">example.com</a></td>
+            <td>Agent</td>
+            <td><a href="https://example.com" target="_blank" rel="noopener">Representative</a></td>
           </tr>
         </tbody>
       </table>
     </section>
 
     <!-- Inquiry form -->
-    <section id="inquiry" aria-labelledby="inquiry-heading" class="mb-4">
-      <h2 id="inquiry-heading" class="h4">Inquiry form</h2>
-      <p>Send a short inquiry. (Demo form — client-side only)</p>
+    <section id="inquiry" aria-labelledby="inquiry-heading" class="mb-5">
+      <h2 id="inquiry-heading">Request an inquiry</h2>
+      <p>Send a short message for commissions or licensing (demo form — no server).</p>
 
-      <form id="inquiryForm" action="#" method="post" onsubmit="alert('Demo: inquiry submitted'); return false;">
-        <div class="mb-2">
-          <label for="fullname" class="form-label">Full name</label>
-          <input id="fullname" name="fullname" class="form-control" type="text" required placeholder="Your full name">
-        </div>
-
-        <div class="mb-2">
-          <label for="email" class="form-label">Email</label>
-          <input id="email" name="email" class="form-control" type="email" required placeholder="you@example.com">
+      <form id="inquiryForm" action="#" method="post" onsubmit="alert('Demo: inquiry submitted'); return false;" class="needs-validation" novalidate>
+        <div class="row g-2 mb-2">
+          <div class="col-md-6">
+            <label for="fullname" class="form-label">Full name</label>
+            <input id="fullname" name="fullname" class="form-control" type="text" required placeholder="Your name">
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input id="email" name="email" class="form-control" type="email" required placeholder="you@example.com">
+          </div>
         </div>
 
         <div class="mb-2">
           <label for="message" class="form-label">Message</label>
-          <textarea id="message" name="message" class="form-control" rows="3" placeholder="Short message"></textarea>
+          <textarea id="message" name="message" class="form-control" rows="4" placeholder="Brief message"></textarea>
         </div>
 
-        <div class="mb-2 form-check">
-          <input id="consent" name="consent" class="form-check-input" type="checkbox">
-          <label for="consent" class="form-check-label">I agree to be contacted</label>
+        <div class="mb-3 form-check">
+          <input id="consent" class="form-check-input" type="checkbox" name="consent">
+          <label for="consent" class="form-check-label">I agree to be contacted regarding this inquiry</label>
         </div>
 
         <button type="submit" class="btn btn-primary">Send inquiry</button>
@@ -140,22 +179,41 @@
     </section>
   </main>
 
-  <footer class="container py-3 text-center text-muted">
-    <p class="mb-0">© <span id="year"></span> Hans Zimmer — business card demo. For demo/educational use only.</p>
-    <p class="small mb-0">Validate with <a href="https://validator.w3.org/" target="_blank" rel="noopener">W3C Validator</a>.</p>
+  <footer class="site-footer container py-4 text-center text-muted">
+    <p class="mb-1">© <span id="year"></span> Hans Zimmer — demo. For educational and design demonstration purposes only.</p>
+    <p class="mb-0">Validate this page at the <a href="https://validator.w3.org/" target="_blank" rel="noopener">W3C Validator</a>.</p>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS (optional utilities) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
   <script>
-    // Interaction: print and copy contact
+    // small interactive logic
     document.getElementById('year').textContent = new Date().getFullYear();
     document.getElementById('printBtn').addEventListener('click', () => window.print());
-    document.getElementById('copyBtn').addEventListener('click', () => {
-      const contact = `Hans Zimmer\nPhone: +1 (234) 567-890\nEmail: hans@example.com\nWebsite: https://example.com`;
-      navigator.clipboard?.writeText(contact).then(() => alert('Contact copied to clipboard'), () => alert('Copy failed'));
+    document.getElementById('copyBtn').addEventListener('click', async () => {
+      const text = `Hans Zimmer\nComposer & Music Producer\nBerlin, Germany\nEmail: hello@hanszimmer.example\nWebsite: https://example.com`;
+      try {
+        await navigator.clipboard.writeText(text);
+        alert('Contact copied to clipboard');
+      } catch {
+        alert('Unable to copy contact');
+      }
     });
+
+    // simple bootstrap validation UI
+    (function () {
+      'use strict';
+      const form = document.getElementById('inquiryForm');
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+          alert('Please complete required fields (demo).');
+        }
+        form.classList.add('was-validated');
+      }, false);
+    })();
   </script>
 </body>
 </html>

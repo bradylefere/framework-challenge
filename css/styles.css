@@ -1,0 +1,127 @@
+/* Stylized filmic business card — Hans Zimmer demo */
+
+/* Fonts already loaded from Google Fonts in the page */
+:root{
+  --bg: #0b1220;
+  --card-bg-1: #071027;
+  --card-bg-2: #0b1f41;
+  --accent: #ffd966;
+  --muted: #9fb0c6;
+  --glass: rgba(255,255,255,0.03);
+}
+
+.site-bg {
+  background: linear-gradient(180deg,#f6f7fb 0%, #ffffff 60%);
+  color: #08303b;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.site-header .brand {
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.monogram { width:72px; height:72px; border-radius:12px; }
+.brand-text .site-title {
+  margin:0;
+  font-family: "Playfair Display", serif;
+  font-weight:700;
+  font-size:1.4rem;
+  color:#071027;
+}
+.site-sub { margin:0; color:var(--muted); font-size:0.95rem; }
+
+/* Business card */
+.business-card {
+  width: 360px;
+  min-height: 200px;
+  display:flex;
+  gap:16px;
+  padding:18px;
+  border-radius:14px;
+  background: linear-gradient(180deg, var(--card-bg-1) 0%, var(--card-bg-2) 100%);
+  color: #eaf3ff;
+  box-shadow: 0 10px 30px rgba(6,12,24,0.45);
+  align-items:stretch;
+}
+
+/* layout inside card */
+.business-card .left {
+  flex: 2;
+}
+.business-card .right {
+  flex: 1;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:flex-end;
+}
+
+/* name & role */
+.business-card h3#name {
+  margin:0;
+  font-family: "Playfair Display", serif;
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.01em;
+}
+.business-card .role {
+  margin:4px 0 8px 0;
+  color: #cfe6ff;
+  font-size:0.9rem;
+}
+
+/* origin */
+.business-card .origin {
+  font-size:0.85rem;
+  color:#d6e9ff;
+  margin-bottom:8px;
+}
+
+/* contact list */
+.contact-list { margin:0; padding:0; }
+.contact-list dt { display:inline-block; min-width:56px; font-weight:700; color:#e7f3ff; }
+.contact-list dd { display:inline-block; margin:0 0 8px 0; color:#f0f7ff; }
+
+/* credits */
+.credits { margin-top:8px; color:#dbefff; font-size:0.85rem; font-style:italic; }
+
+/* waveform mark */
+.logo-mark svg { width:110px; height:28px; display:block; }
+
+/* card actions */
+.card-actions { display:flex; gap:8px; }
+
+/* small utilities */
+.visually-hidden { position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
+
+/* headings and content spacing */
+main h2, main h3 { color:#071027; font-family: "Playfair Display", serif; }
+blockquote.blockquote { border-left:4px solid #ffd966; padding-left:12px; margin:0.75rem 0; color:#344b58; background:var(--glass); padding:8px 12px; border-radius:6px; }
+
+/* small table tone */
+table.table { background:transparent; }
+table caption { font-weight:600; color:#0b2230; }
+
+/* responsive tweak */
+@media (max-width: 420px) {
+  .business-card { width: 92vw; min-height: 180px; padding:14px; }
+  .monogram { width:56px; height:56px; }
+}
+
+/* Print styles: print the card cleanly */
+@media print {
+  body * { visibility: hidden; }
+  .business-card, .business-card * { visibility: visible; }
+  .business-card {
+    position: absolute;
+    left: 0; top: 0;
+    width: 90mm; height: 50mm;
+    box-shadow: none;
+    border-radius: 4mm;
+  }
+  /* remove buttons and decorative marks for print */
+  .card-actions, .logo-mark { display:none; }
+}
